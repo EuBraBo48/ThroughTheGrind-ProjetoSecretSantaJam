@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://EuBraBo/Script/dialog.gd" id="1_h08p7"]
 
-[node name="Dialog" type="Control"]
+[node name="Dialog" type="Control" node_paths=PackedStringArray("_name", "_texte", "_icone")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +10,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h08p7")
+_name = NodePath("name")
+_texte = NodePath("dialog")
+_icone = NodePath("icone")
 
 [node name="fundo" type="ColorRect" parent="."]
 layout_mode = 1
@@ -29,25 +32,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.0
-offset_top = -39.0
-offset_right = 29.0
-offset_bottom = -16.0
+offset_left = -98.0
+offset_top = -61.0
+offset_right = 5.0
+offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "sddefefefefef"
 
 [node name="dialog" type="RichTextLabel" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -94.0
-offset_top = 9.0
-offset_right = 110.0
-offset_bottom = 55.0
+anchors_preset = -1
+anchor_left = 0.375
+anchor_top = 0.822
+anchor_right = 0.375
+anchor_bottom = 0.822
+offset_left = -109.0
+offset_top = -50.96
+offset_right = 95.0
+offset_bottom = -4.96001
 grow_horizontal = 2
 grow_vertical = 2
 text = "sdsdefefsdddsddwddsd"
@@ -56,9 +59,14 @@ fit_content = true
 [node name="icone" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.017
-anchor_bottom = 0.062
-offset_left = 50.0
-offset_top = 48.0
-offset_right = 70.416
-offset_bottom = 47.824
+anchor_left = 0.792
+anchor_top = 0.672
+anchor_right = 0.792
+anchor_bottom = 0.672
+offset_left = -19.12
+offset_top = -27.96
+offset_right = 18.88
+offset_bottom = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
