@@ -15,7 +15,6 @@ var data: Dictionary = {}
 func _ready() -> void:
 	_initialice_dialog()
 
-
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept") and _texte.visible_ratio <  1:
 		_speed = 0.01
