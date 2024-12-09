@@ -1,6 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://dllar88mbeg6w"]
+[gd_scene load_steps=18 format=3 uid="uid://dllar88mbeg6w"]
 
 [ext_resource type="Script" path="res://EuBraBo/Script/menu.gd" id="1_xc25y"]
+[ext_resource type="FontFile" uid="uid://chhvbl048066d" path="res://EuBraBo/Sprites/fontes/Cave-Story.ttf" id="2_viwet"]
+[ext_resource type="Texture2D" uid="uid://csfbmfv2fdxvn" path="res://EuBraBo/Sprites/iconeDoProta.png" id="3_bwf5g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_on1p5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwqj2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_svj7h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mkg6l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_beeth"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3mjmv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bev3i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr3ay"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3oc2x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kkr8m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cwwy4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ynlo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bh68d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2hcb"]
 
 [node name="Menu" type="Control"]
 process_mode = 3
@@ -22,6 +52,7 @@ grow_vertical = 2
 color = Color(0.324203, 0.324203, 0.324203, 1)
 
 [node name="menu" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,19 +68,39 @@ grow_vertical = 2
 
 [node name="new game" type="Button" parent="menu"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.678431, 1, 1)
+theme_override_fonts/font = ExtResource("2_viwet")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_on1p5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xwqj2")
 text = "new game"
+icon = ExtResource("3_bwf5g")
 
 [node name="continued" type="Button" parent="menu"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.678431, 1, 1)
+theme_override_fonts/font = ExtResource("2_viwet")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_on1p5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xwqj2")
 text = "continued"
+icon = ExtResource("3_bwf5g")
 
 [node name="opctions" type="Button" parent="menu"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.678431, 1, 1)
+theme_override_fonts/font = ExtResource("2_viwet")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_on1p5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xwqj2")
 text = "opctions"
+icon = ExtResource("3_bwf5g")
 
 [node name="Exit" type="Button" parent="menu"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.678431, 1, 1)
+theme_override_fonts/font = ExtResource("2_viwet")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_on1p5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xwqj2")
 text = "Exit"
+icon = ExtResource("3_bwf5g")
 
 [node name="opcions" type="Control" parent="."]
 visible = false
@@ -76,11 +127,24 @@ grow_vertical = 2
 
 [node name="video" type="Button" parent="opcions/opcions"]
 layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.554387, 0.698667, 0.996563, 1)
+theme_override_colors/font_hover_color = Color(0.0075082, 0.231463, 0.988736, 1)
+theme_override_fonts/font = ExtResource("2_viwet")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_svj7h")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mkg6l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_beeth")
 text = "video"
+icon = ExtResource("3_bwf5g")
 
 [node name="Creditos" type="Button" parent="opcions/opcions"]
 layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.554387, 0.698667, 0.996563, 1)
+theme_override_colors/font_hover_color = Color(0.0075082, 0.231463, 0.988736, 1)
+theme_override_fonts/font = ExtResource("2_viwet")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3mjmv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bev3i")
 text = "Credito"
+icon = ExtResource("3_bwf5g")
 
 [node name="BackFromOpctions" type="Button" parent="opcions"]
 layout_mode = 1
@@ -94,10 +158,15 @@ offset_top = -8.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0.554387, 0.698667, 0.996563, 1)
+theme_override_colors/font_hover_color = Color(0.0075082, 0.231463, 0.988736, 1)
+theme_override_fonts/font = ExtResource("2_viwet")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hr3ay")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3oc2x")
 text = "Back"
+icon = ExtResource("3_bwf5g")
 
 [node name="video" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -121,24 +190,34 @@ grow_vertical = 2
 
 [node name="lebels" type="VBoxContainer" parent="video/video"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 2
 
 [node name="FullScreen" type="Label" parent="video/video/lebels"]
 layout_mode = 2
+size_flags_vertical = 10
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_viwet")
 text = "FullScreen"
 
 [node name="Borderless" type="Label" parent="video/video/lebels"]
 layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_viwet")
 text = "Borderless"
 
 [node name="checkBoxs" type="VBoxContainer" parent="video/video"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="FullScreen" type="CheckBox" parent="video/video/checkBoxs"]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
 
 [node name="Borderless" type="CheckBox" parent="video/video/checkBoxs"]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="BackFromVIdo" type="Button" parent="video"]
 layout_mode = 1
@@ -152,7 +231,11 @@ offset_top = -8.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_viwet")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kkr8m")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwwy4")
 text = "Back"
+icon = ExtResource("3_bwf5g")
 
 [node name="creditos" type="Control" parent="."]
 visible = false
@@ -175,7 +258,12 @@ offset_top = -8.0
 offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_viwet")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3ynlo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bh68d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_a2hcb")
 text = "Back"
+icon = ExtResource("3_bwf5g")
 
 [connection signal="pressed" from="menu/opctions" to="." method="_on_opctions_pressed"]
 [connection signal="pressed" from="menu/Exit" to="." method="_on_exit_pressed"]

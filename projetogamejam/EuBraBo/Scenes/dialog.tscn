@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://r4tlfvo84lx7"]
+[gd_scene load_steps=5 format=3 uid="uid://r4tlfvo84lx7"]
 
 [ext_resource type="Script" path="res://EuBraBo/Script/dialog.gd" id="1_h08p7"]
+[ext_resource type="Texture2D" uid="uid://dns0fshks58sa" path="res://EuBraBo/Sprites/CaixaDeDialogo_1.png" id="2_dn26n"]
+[ext_resource type="FontFile" uid="uid://chhvbl048066d" path="res://EuBraBo/Sprites/fontes/Cave-Story.ttf" id="3_g4r0o"]
+[ext_resource type="Texture2D" uid="uid://csfbmfv2fdxvn" path="res://EuBraBo/Sprites/iconeDoProta.png" id="4_cd6tq"]
 
 [node name="Dialog" type="Control" node_paths=PackedStringArray("_name", "_texte", "_icone")]
 layout_mode = 3
@@ -24,6 +27,9 @@ grow_vertical = 2
 color = Color(0.481789, 0.481789, 0.481789, 1)
 
 [node name="caixaDeDialogos" type="Sprite2D" parent="."]
+position = Vector2(187, 102)
+scale = Vector2(2, 2)
+texture = ExtResource("2_dn26n")
 
 [node name="name" type="Label" parent="."]
 layout_mode = 1
@@ -32,13 +38,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -61.0
-offset_right = 5.0
-offset_bottom = -38.0
+offset_left = -134.0
+offset_top = -6.0
+offset_right = -80.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "sddefefefefef"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.278431, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g4r0o")
+text = "sdsdsdssd"
+horizontal_alignment = 1
 
 [node name="dialog" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -47,14 +57,15 @@ anchor_left = 0.375
 anchor_top = 0.822
 anchor_right = 0.375
 anchor_bottom = 0.822
-offset_left = -109.0
-offset_top = -50.96
-offset_right = 95.0
-offset_bottom = -4.96001
+offset_left = -19.0
+offset_top = -69.96
+offset_right = 185.0
+offset_bottom = -23.96
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_g4r0o")
 text = "sdsdefefsdddsddwddsd"
-fit_content = true
 
 [node name="icone" type="TextureRect" parent="."]
 layout_mode = 1
@@ -63,10 +74,11 @@ anchor_left = 0.792
 anchor_top = 0.672
 anchor_right = 0.792
 anchor_bottom = 0.672
-offset_left = -19.12
-offset_top = -27.96
-offset_right = 18.88
-offset_bottom = 0.0399933
+offset_left = -233.12
+offset_top = -24.96
+offset_right = -192.12
+offset_bottom = 5.04
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("4_cd6tq")
 expand_mode = 1

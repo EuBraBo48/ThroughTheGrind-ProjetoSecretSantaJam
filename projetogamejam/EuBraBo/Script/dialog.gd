@@ -34,6 +34,12 @@ func _initialice_dialog() -> void:
 		_name.text = data[_id]["title"]
 		_texte.text = data[_id]["dialog"]
 		_icone.texture = load(data[_id]["icone"])
+		_texte.visible_characters = 0
 		
 		while _texte.visible_ratio < 1:
 			await get_tree().create_timer(_speed).timeout
+			_texte.visible_characters += 1
+			
+
+		
+		

@@ -9,7 +9,7 @@ var DialogPrincipalDia1: Dictionary = {
 	},
 	1: {"dialog": "Mom! Mom! You’re having another coughing fit! My God, I need to get a job to pay for your surgery!", 
 		"title": "Ethan", 
-		"icone": "res://CoisaEmGeral/icon.svg"
+		"icone": "res://EuBraBo/Sprites/iconeDoProta.png"
 	},
 	2: {"dialog": "My dear... Kokkko... You don’t have to... But if you do work, take your phone. I’ll call you during your lunch break, my son.", 
 		"title": "Helen", 
@@ -17,7 +17,7 @@ var DialogPrincipalDia1: Dictionary = {
 	},
 	3: {"dialog": "(crying) Yes, mom...", 
 		"title": "Ethan", 
-		"icone": "res://CoisaEmGeral/icon.svg"
+		"icone": "res://EuBraBo/Sprites/iconeDoProta.png"
 	}
 }
 
