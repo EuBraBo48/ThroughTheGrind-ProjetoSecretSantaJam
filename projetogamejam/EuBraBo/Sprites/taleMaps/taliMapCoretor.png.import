@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6isph3hkdvqk"
-path="res://.godot/imported/BonecoTemplate_1.png-1c45cef9db06f836949241a960f958a1.ctex"
+uid="uid://dmvfdkqqmg4xq"
+path="res://.godot/imported/taliMapCoretor.png-9958512b81710069c6104c600d7d6f41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EuBraBo/Sprites/BonecoTemplate_1.png"
-dest_files=["res://.godot/imported/BonecoTemplate_1.png-1c45cef9db06f836949241a960f958a1.ctex"]
+source_file="res://EuBraBo/Sprites/taleMaps/taliMapCoretor.png"
+dest_files=["res://.godot/imported/taliMapCoretor.png-9958512b81710069c6104c600d7d6f41.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csfbmfv2fdxvn"
-path="res://.godot/imported/iconeDoProta.png-4cead1dfa7a175ef1df57ec011eb3e2c.ctex"
+uid="uid://c8klmtsn3nrqq"
+path="res://.godot/imported/progesooDaRotebar.png-37c066a31128147deb29fea0e1e71ae2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EuBraBo/Sprites/iconeDoProta.png"
-dest_files=["res://.godot/imported/iconeDoProta.png-4cead1dfa7a175ef1df57ec011eb3e2c.ctex"]
+source_file="res://EuBraBo/Sprites/Objetos/progesooDaRotebar.png"
+dest_files=["res://.godot/imported/progesooDaRotebar.png-37c066a31128147deb29fea0e1e71ae2.ctex"]
 
 [params]
 

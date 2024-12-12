@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h67j060sdwql"
-path="res://.godot/imported/BonecoTemplate_2.png-7e1773072405b5152596a6954a0e9379.ctex"
+uid="uid://dbbtm7nyq207i"
+path="res://.godot/imported/PatraoIcone.png-b6adc7e9fd512fed0e50d63359a24c41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EuBraBo/Sprites/BonecoTemplate_2.png"
-dest_files=["res://.godot/imported/BonecoTemplate_2.png-7e1773072405b5152596a6954a0e9379.ctex"]
+source_file="res://EuBraBo/Sprites/icones/PatraoIcone.png"
+dest_files=["res://.godot/imported/PatraoIcone.png-b6adc7e9fd512fed0e50d63359a24c41.ctex"]
 
 [params]
 

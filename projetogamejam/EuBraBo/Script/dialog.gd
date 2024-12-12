@@ -1,7 +1,7 @@
 extends Control
 class_name DialogScren
 
-var _speed: float = 0.5
+var _speed: float = 0.03
 
 var _id: int = 0
 var data: Dictionary = {}
@@ -17,14 +17,15 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept") and _texte.visible_ratio <  1:
-		_speed = 0.01
+		_speed = 0.03
 		return
-	_speed = 0.5	
+	_speed = 0.03
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		_id += 1	
 		if _id == data.size():
 			queue_free()
+			get_tree().paused = false
 			return	
 		_initialice_dialog()	
 

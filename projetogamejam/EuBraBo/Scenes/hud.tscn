@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bx845cwsdxqb0"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="dia" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931
+anchor_top = 0.144
+anchor_right = 0.931
+anchor_bottom = 0.144
+offset_left = -33.16
+offset_top = -32.92
+offset_right = 6.83997
+offset_bottom = -9.92
+text = "dia"
+horizontal_alignment = 1
+
+[node name="horario" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.931
+anchor_top = 0.296
+anchor_right = 0.931
+anchor_bottom = 0.296
+offset_left = -40.16
+offset_top = -37.28
+offset_right = 17.84
+offset_bottom = -14.28
+text = "horario"
+
+[node name="dinheiro" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.897
+anchor_top = 0.356
+anchor_right = 0.897
+anchor_bottom = 0.356
+offset_left = -32.92
+offset_top = -23.08
+offset_right = 33.08
+offset_bottom = -0.0800018
+text = "dinheiro"
+
+[node name="task" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -6.0
+offset_right = 64.0
+offset_bottom = 17.0
+text = "tarefas"
+
+[node name="tarefa1" type="Label" parent="task"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 45.0
+offset_right = 56.0
+offset_bottom = 68.0
+text = "tarefas2"
+
+[node name="tarefa2" type="Label" parent="task"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 22.0
+offset_right = 57.0
+offset_bottom = 45.0
+text = "tarefas1"
+
+[node name="tarefa3" type="Label" parent="task"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 70.0
+offset_right = 65.0
+offset_bottom = 93.0
+text = "tarefas3"
+
+[node name="tarefa4" type="Label" parent="task"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 90.0
+offset_right = 67.0
+offset_bottom = 113.0
+text = "Etc"
