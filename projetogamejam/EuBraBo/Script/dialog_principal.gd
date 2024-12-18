@@ -112,6 +112,7 @@ var DialogPrincipalDia7: Dictionary = {
 
 func _ready() -> void:
 	dialogDiario()
+	pass
 	
 	
 func dialogDiario() -> void:

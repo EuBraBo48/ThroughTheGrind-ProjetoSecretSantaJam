@@ -4,15 +4,28 @@ class_name Player
 @export var _stateManine: stateMachine = null
 @onready var sprite__player: Sprite2D = $BonecoTemplate2
 @onready var animation: AnimationPlayer = $Animation
+@export var _hud: hud
 
+var v := false
+var obejte
 
 @export var seepd: float = 100
 
 func _ready() -> void:
 	_stateManine.stateMacne(self)
-
+	obejte = obejte
 
 func _process(delta: float) -> void:
+	if obejte:
+		print(obejte.health)
+		
+	if obejte:	
+		print("swswswsws")
+		if Input.is_action_just_pressed("interagir") and obejte.health < 100 and v == true  and _hud.NumCaixa >= 1:
+			obejte.health += 20
+			_hud.NumCaixa -= 1
+			seepd += 5
+			global.TafezasFeitasEstoque += 1
 	move_and_slide()
 	verify_direction()
 	monventPlaye()
@@ -32,3 +45,14 @@ func monventPlaye() -> void:
 	).normalized()
 	velocity = input_vecto * seepd
 	
+
+func _on_area_2d_body_entered(body) -> void:
+	if body.is_in_group("objetes"):
+		obejte = body 
+		v = true
+
+
+func _on_area_2d_body_exited(body) -> void:
+	if body.is_in_group("objetes"):
+		obejte = null
+		v = false

@@ -10,4 +10,17 @@ func _ready() -> void:
 	#print(obejeto.health)
 	#print(obejeto.max_health)
 	
+func  _physics_process(delta: float) -> void:	
+	if health == 50:
+		$pratileiraCompleta.z_index = 0
+		$pratileiraMeia.z_index = 1
+		$pratileiraVasia.z_index = 0
+	if health == 100:
+		$pratileiraCompleta.z_index = 1
+		$pratileiraMeia.z_index = 0
+		$pratileiraVasia.z_index = 0
 	
+	if  health <= 20:
+		$pratileiraCompleta.z_index = 0
+		$pratileiraMeia.z_index = 0
+		$pratileiraVasia.z_index = 1

@@ -10,4 +10,16 @@ func _ready() -> void:
 	#print(obejeto.health)
 	#print(obejeto.max_health)
 	
-	
+func _process(delta: float) -> void:
+	if health == 50:
+		$pratileiraMeia.show()
+		$pratileiraVasia.hide()
+		$pratileiraCheia.hide()
+	elif health == 100:
+		$pratileiraMeia.hide()
+		$pratileiraVasia.hide()
+		$pratileiraCheia.show()
+	elif  health <= 20:
+		$pratileiraMeia.hide()
+		$pratileiraVasia.show()
+		$pratileiraCheia.hide()

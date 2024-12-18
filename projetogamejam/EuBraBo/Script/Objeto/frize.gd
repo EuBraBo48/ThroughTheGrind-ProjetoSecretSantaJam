@@ -9,5 +9,5 @@ func _ready() -> void:
 	print(obejeto.valor)
 	#print(obejeto.health)
 	#print(obejeto.max_health)
-	
-	
+	if health < 100:
+		global.TafezasPendentesEstoque += 1

@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4b6c"]
 size = Vector2(32, 15)
 
-[node name="Frize" type="RigidBody2D"]
+[node name="Frize" type="RigidBody2D" groups=["objetes"]]
+collision_layer = 2
+collision_mask = 12
 gravity_scale = 0.0
 script = ExtResource("1_vwm4t")
 

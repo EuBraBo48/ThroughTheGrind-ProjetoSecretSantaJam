@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c317f3ntxgy1f"]
+[gd_scene load_steps=13 format=3 uid="uid://c317f3ntxgy1f"]
 
 [ext_resource type="Script" path="res://EuBraBo/Script/player.gd" id="1_b45il"]
 [ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/state_machine.gd" id="2_d0kmy"]
@@ -90,6 +90,9 @@ _data = {
 "Run": SubResource("Animation_atxt8")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87qyj"]
+size = Vector2(14, 14)
+
 [node name="player" type="CharacterBody2D" node_paths=PackedStringArray("_stateManine") groups=["player"]]
 collision_layer = 4
 collision_mask = 10
@@ -136,3 +139,14 @@ drag_top_margin = 0.38
 drag_right_margin = 0.32
 drag_bottom_margin = 0.31
 editor_draw_drag_margin = true
+
+[node name="AreGeral" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 10
+
+[node name="Collision" type="CollisionShape2D" parent="AreGeral"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_87qyj")
+
+[connection signal="body_entered" from="AreGeral" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="AreGeral" to="." method="_on_area_2d_body_exited"]

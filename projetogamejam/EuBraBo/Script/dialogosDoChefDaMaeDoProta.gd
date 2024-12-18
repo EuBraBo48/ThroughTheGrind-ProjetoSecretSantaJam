@@ -313,7 +313,178 @@ var DialogAberturaLojaDia7: Dictionary = {
 
 
 func _ready() -> void:
-	var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
-	dialog.data = DialogMaeDia5
-	get_tree().paused = true
-	hud.add_child(dialog)
+	dialogDiarioAbri()
+
+func _physics_process(delta: float) -> void:
+	dialogLigacaoMae()
+	dialogLigacaoChef()
+
+
+func dialogDiarioAbri() -> void:
+	if global.DiaGlogo == 1:
+		print("dia1")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogChefeDia1
+		get_tree().paused = true
+		hud.add_child(dialog)
+		
+	elif global.DiaGlogo == 2:
+		print("dia 2")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogAberturaLojaDia2
+		get_tree().paused = true
+		hud.add_child(dialog)
+		
+	elif global.DiaGlogo == 3:
+		print("dia 3")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogAberturaLojaDia3
+		get_tree().paused = true
+		hud.add_child(dialog)
+		
+	elif global.DiaGlogo == 4:
+		print("dia 4")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogAberturaLojaDia4
+		get_tree().paused = true
+		hud.add_child(dialog)
+		
+	elif global.DiaGlogo == 5:
+		print("dia 5")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogAberturaLojaDia5
+		get_tree().paused = true
+		hud.add_child(dialog)
+		
+	elif global.DiaGlogo == 6:
+		print("dia 6")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogAberturaLojaDia6
+		get_tree().paused = true
+		hud.add_child(dialog)
+		
+	else:
+		print("dia 7")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogAberturaLojaDia7
+		get_tree().paused = true
+		hud.add_child(dialog)
+	
+
+func dialogLigacaoMae() -> void:
+	if global.DiaGlogo == 1 and global.horario == 13:
+		print("dia1")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogMaeDia1
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+	elif global.DiaGlogo == 2  and global.horario == 13:
+		print("dia 2")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogMaeDia2
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+	elif global.DiaGlogo == 3 and global.horario == 13:
+		print("dia 3")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogMaeDia3
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+		
+	elif global.DiaGlogo == 4 and global.horario == 13:
+		print("dia 4")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogMaeDia4
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+	elif global.DiaGlogo == 5 and global.horario == 13:
+		print("dia 5")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogMaeDia5
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+	elif global.DiaGlogo == 6 and global.horario == 13 :
+		print("dia 6")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogMaeDia6
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+	elif global.DiaGlogo == 6 and global.horario == 13:
+		print("dia 7")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogMaeDia7
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+
+
+
+func dialogLigacaoChef() -> void:
+	if global.DiaGlogo == 1 and global.horario == 20:
+		print("dia1")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogChefeDia1
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+	elif global.DiaGlogo == 2  and global.horario == 20:
+		print("dia 2")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogChefeDia2
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+	elif global.DiaGlogo == 3 and global.horario == 20:
+		print("dia 3")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogChefeDia3
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+		
+	elif global.DiaGlogo == 4 and global.horario == 20:
+		print("dia 4")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogChefeDia4
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+	elif global.DiaGlogo == 5 and global.horario == 20:
+		print("dia 5")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogChefeDia5
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+	elif global.DiaGlogo == 6 and global.horario == 20 :
+		print("dia 6")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogChefeDia6
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1
+		
+	elif global.DiaGlogo == 6 and global.horario == 20:
+		print("dia 7")
+		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
+		dialog.data = DialogChefeDia7
+		get_tree().paused = true
+		hud.add_child(dialog)
+		global.horario += 1

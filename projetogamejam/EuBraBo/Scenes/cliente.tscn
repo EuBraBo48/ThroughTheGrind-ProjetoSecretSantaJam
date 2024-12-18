@@ -1,0 +1,116 @@
+[gd_scene load_steps=17 format=3 uid="uid://ce6gutyloxqkw"]
+
+[ext_resource type="Texture2D" uid="uid://1lqcx68xgut6" path="res://EuBraBo/Sprites/Personages/npcs/BonecoTemplate_4.png" id="1_4np3o"]
+[ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/cliente/Cliente.gd" id="1_o66em"]
+[ext_resource type="Texture2D" uid="uid://x70tb062nxx0" path="res://EuBraBo/Sprites/Personages/npcs/BonecoTemplate_8.png" id="2_2vh2i"]
+[ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/state_machine.gd" id="3_7m75k"]
+[ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/cliente/ide.gd" id="4_2gxyg"]
+[ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/cliente/persiguindo.gd" id="5_6vs7r"]
+[ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/cliente/interagindo.gd" id="6_l2x2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_infkv"]
+size = Vector2(10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cubv"]
+atlas = ExtResource("1_4np3o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch6ry"]
+atlas = ExtResource("1_4np3o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij6wn"]
+atlas = ExtResource("1_4np3o")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqob2"]
+atlas = ExtResource("2_2vh2i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj6nm"]
+atlas = ExtResource("2_2vh2i")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2bw1"]
+atlas = ExtResource("2_2vh2i")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qld6j"]
+atlas = ExtResource("2_2vh2i")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4dm04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cubv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch6ry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij6wn")
+}],
+"loop": true,
+"name": &"ide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqob2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj6nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2bw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qld6j")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="cliente" type="CharacterBody2D" node_paths=PackedStringArray("_stateManine")]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_o66em")
+_stateManine = NodePath("StateMachine")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_infkv")
+
+[node name="Animate" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4dm04")
+animation = &"run"
+autoplay = "ide"
+frame_progress = 0.967572
+
+[node name="Navigation" type="NavigationAgent2D" parent="."]
+path_desired_distance = 213.26
+target_desired_distance = 10.3
+avoidance_layers = 7
+avoidance_mask = 7
+debug_enabled = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("stateInicial")]
+script = ExtResource("3_7m75k")
+stateInicial = NodePath("persiguindo")
+
+[node name="Ide" type="Node" parent="StateMachine"]
+script = ExtResource("4_2gxyg")
+
+[node name="persiguindo" type="Node" parent="StateMachine" node_paths=PackedStringArray("_cliente")]
+script = ExtResource("5_6vs7r")
+_cliente = NodePath("../..")
+
+[node name="Interagindo" type="Node" parent="StateMachine"]
+script = ExtResource("6_l2x2m")
+
+[node name="TimerNavigation" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="TimerNavigation" to="." method="_on_timer_navigation_timeout"]

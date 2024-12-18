@@ -1,16 +1,84 @@
-[gd_scene load_steps=6 format=3 uid="uid://fy01cqfrw4fa"]
+[gd_scene load_steps=12 format=3 uid="uid://fy01cqfrw4fa"]
 
 [ext_resource type="Script" path="res://EuBraBo/Script/cassa_do_player.gd" id="1_fhtya"]
 [ext_resource type="Script" path="res://EuBraBo/Script/dialog_principal.gd" id="1_k2aoy"]
-[ext_resource type="Texture2D" uid="uid://chobq5sdkaho3" path="res://CoisaEmGeral/icon.svg" id="2_ehtr3"]
-[ext_resource type="FontFile" uid="uid://chhvbl048066d" path="res://EuBraBo/Sprites/fontes/Cave-Story.ttf" id="4_80kv4"]
+[ext_resource type="Texture2D" uid="uid://csfbmfv2fdxvn" path="res://EuBraBo/Sprites/icones/iconeDoProta.png" id="3_rcf61"]
+[ext_resource type="FontFile" uid="uid://byeucmyge7xj7" path="res://EuBraBo/Sprites/fontes/MatchupPro.otf" id="4_si17c"]
+[ext_resource type="Texture2D" uid="uid://bavkaas1bdm3b" path="res://EuBraBo/Sprites/taleMaps/Mapa.png" id="5_hlld0"]
+[ext_resource type="Texture2D" uid="uid://duc6rvhy7bscu" path="res://EuBraBo/Sprites/Objetos/quadradiDetextro.png" id="6_q7tbg"]
 
 [sub_resource type="Curve2D" id="Curve2D_ri4ta"]
-bake_interval = 9.65
+bake_interval = 512.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 18, 31, 0, 0, 0, 0, 40, 71, 0, 0, 0, 0, 74, 81, 0, 0, 0, 0, 80, 107, 0, 0, 0, 0, 105, 105, 0, 0, 0, 0, 113, 121, 0, 0, 0, 0, 144, 114, 0, 0, 0, 0, 159, 150, 0, 0, 0, 0, 193, 138, 0, 0, 0, 0, 242, 144, 0, 0, 0, 0, 300, 136, 0, 0, 0, 0, 313, 128, 0, 0, 0, 0, 325, 125, 0, 0, 0, 0, 341, 99)
+"points": PackedVector2Array(0, 0, 0, 0, 111, 52, 0, 0, 0, 0, 136, 52, 0, 0, 0, 0, 158.214, 52.1022, 0, 0, 0, 0, 178, 53, 0, 0, 0, 0, 197.219, 52.6635, 0, 0, 0, 0, 214, 56, 0, 0, 0, 0, 213, 76, 0, 0, 0, 0, 214, 94, 0, 0, 0, 0, 198, 98, 0, 0, 0, 0, 178, 98, 0, 0, 0, 0, 157, 97, 0, 0, 0, 0, 132, 97, 0, 0, 0, 0, 114, 98, 0, 0, 0, 0, 96, 97, 0, 0, 0, 0, 72, 97, 0, 0, 0, 0, 71, 110, 0, 0, 0, 0, 71, 131, 0, 0, 0, 0, 90, 133, 0, 0, 0, 0, 107, 133, 0, 0, 0, 0, 129, 133, 0, 0, 0, 0, 151, 133, 0, 0, 0, 0, 170, 133, 0, 0, 0, 0, 192, 133, 0, 0, 0, 0, 208, 133, 0, 0, 0, 0, 226, 134, 0, 0, 0, 0, 250, 133, 0, 0, 0, 0, 252, 134)
 }
-point_count = 14
+point_count = 27
+
+[sub_resource type="Animation" id="Animation_pty55"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaminhoDecassa/caminhda/IconeDoProta:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CaminhoDecassa/caminhda/IconeDoProta:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.045455]
+}
+
+[sub_resource type="Animation" id="Animation_g15rq"]
+resource_name = "ide"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaminhoDecassa/caminhda/IconeDoProta:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.06564, 1.03007), Vector2(1.00983, 0.952619)]
+}
+
+[sub_resource type="Animation" id="Animation_yx3kg"]
+resource_name = "rum"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaminhoDecassa/caminhda/IconeDoProta:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.733333, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.045455, 0.140426, -0.16658, 0.360269, -0.151923]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_plr4q"]
+_data = {
+"RESET": SubResource("Animation_pty55"),
+"ide": SubResource("Animation_g15rq"),
+"rum": SubResource("Animation_yx3kg")
+}
 
 [node name="CassaDoPlayer" type="Node2D"]
 script = ExtResource("1_fhtya")
@@ -20,47 +88,46 @@ script = ExtResource("1_k2aoy")
 hud = NodePath(".")
 
 [node name="CaminhoDecassa" type="Path2D" parent="."]
+position = Vector2(0, 1)
 curve = SubResource("Curve2D_ri4ta")
 
 [node name="caminhda" type="PathFollow2D" parent="CaminhoDecassa"]
-position = Vector2(18, 31)
-rotation = 1.06795
+position = Vector2(111, 52)
 loop = false
 
-[node name="Icon" type="Sprite2D" parent="CaminhoDecassa/caminhda"]
-position = Vector2(-0.0876236, 2.23436)
-rotation = -0.593973
-scale = Vector2(0.265625, 0.195313)
-texture = ExtResource("2_ehtr3")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="CaminhoDecassa/caminhda/Icon"]
-position = Vector2(4.98105, -9.22944)
-rotation = 0.74291
-scale = Vector2(4.2361, 4.73738)
-skew = -0.282015
-emitting = false
-amount = 60
-one_shot = true
-explosiveness = 0.26
-randomness = 0.38
-lifetime_randomness = 1.0
-direction = Vector2(-1, 0)
-spread = 133.3
-gravity = Vector2(0, 0)
-initial_velocity_min = 142.31
-initial_velocity_max = 528.3
-linear_accel_min = 58.49
-linear_accel_max = 58.49
-color = Color(0.00139673, 0.00139673, 0.00139673, 1)
+[node name="IconeDoProta" type="Sprite2D" parent="CaminhoDecassa/caminhda"]
+position = Vector2(-4, 0.999999)
+rotation = -0.045455
+texture = ExtResource("3_rcf61")
 
 [node name="teclado" type="Label" parent="."]
-offset_left = 157.0
-offset_top = 3.0
-offset_right = 188.0
+z_index = 1
+offset_left = 293.0
+offset_top = 8.0
+offset_right = 315.0
 offset_bottom = 40.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("4_80kv4")
+theme_override_fonts/font = ExtResource("4_si17c")
 theme_override_font_sizes/font_size = 40
-text = "s"
+text = "D"
 horizontal_alignment = 1
+
+[node name="mapa" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(179.5, 90)
+scale = Vector2(0.141016, 0.125)
+texture = ExtResource("5_hlld0")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_plr4q")
+}
+autoplay = "ide"
+
+[node name="QuadradiDetextro" type="Sprite2D" parent="."]
+position = Vector2(303, 26)
+scale = Vector2(2, 2)
+texture = ExtResource("6_q7tbg")
+metadata/_edit_lock_ = true

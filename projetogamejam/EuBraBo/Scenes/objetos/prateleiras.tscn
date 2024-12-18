@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80qjp"]
 size = Vector2(32, 32)
 
-[node name="Prateleiras" type="RigidBody2D"]
+[node name="Prateleiras" type="RigidBody2D" groups=["objetes"]]
+collision_layer = 2
+collision_mask = 12
 gravity_scale = 0.0
 script = ExtResource("1_syp73")
 
@@ -15,19 +17,21 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_80qjp")
 
 [node name="pratileiraCompleta" type="Sprite2D" parent="."]
-z_index = 1
+y_sort_enabled = true
 position = Vector2(0, 5)
 texture = ExtResource("1_00y7r")
 region_enabled = true
 region_rect = Rect2(48, 0, 32, 40)
 
 [node name="pratileiraMeia" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0, 1)
 texture = ExtResource("1_00y7r")
 region_enabled = true
 region_rect = Rect2(48, 48, 32, 32)
 
 [node name="pratileiraVasia" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, 1)
 texture = ExtResource("1_00y7r")
 region_enabled = true
