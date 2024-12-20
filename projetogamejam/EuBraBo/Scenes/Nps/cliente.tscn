@@ -90,8 +90,8 @@ autoplay = "ide"
 frame_progress = 0.967572
 
 [node name="Navigation" type="NavigationAgent2D" parent="."]
-path_desired_distance = 213.26
-target_desired_distance = 10.3
+path_desired_distance = 5.0
+target_desired_distance = 5.0
 avoidance_layers = 7
 avoidance_mask = 7
 debug_enabled = true
@@ -107,8 +107,9 @@ script = ExtResource("4_2gxyg")
 script = ExtResource("5_6vs7r")
 _cliente = NodePath("../..")
 
-[node name="Interagindo" type="Node" parent="StateMachine"]
+[node name="Interagindo" type="Node" parent="StateMachine" node_paths=PackedStringArray("_cliente")]
 script = ExtResource("6_l2x2m")
+_cliente = NodePath("../..")
 
 [node name="TimerNavigation" type="Timer" parent="."]
 autostart = true

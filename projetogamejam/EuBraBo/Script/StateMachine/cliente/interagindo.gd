@@ -1,8 +1,11 @@
 extends State
+class_name interagindo
+
+@export var _cliente: cliente
 
 
 func enter() -> void:
-	pass
+	_cliente.alvor = Vector2(347,135)
 	
 func exit() -> void:
 	pass

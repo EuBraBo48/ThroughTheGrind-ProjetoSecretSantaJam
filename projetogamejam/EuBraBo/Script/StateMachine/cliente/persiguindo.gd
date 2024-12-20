@@ -10,19 +10,15 @@ var AlovosVetor: Array = [
 	
 	#PratileirasDeFruta
 	Vector2(152,-4),
-	Vector2(120,-3),
-	Vector2(121,28),
-	Vector2(153,29),
-	Vector2(121,59),
-	Vector2(153,61),
+	
+	Vector2(107,-5),
+	
+	Vector2(107,39),
 	
 	#Pratileiras
 	Vector2(32,4),
 	Vector2(33,64),
 	Vector2(33,128),
-	Vector2(80,5),
-	Vector2(80,63),
-	Vector2(81,127),
 ]
 
 var alvorAleatrorio: Vector2
@@ -36,8 +32,10 @@ func exit() -> void:
 
 
 func process(delta: float) -> void:
-	_cliente.alvor = alvorAleatrorio
+	_cliente.alvor = Vector2(152,-4)
 	
+	if _cliente.global_position.distance_to(_cliente.alvor)  <= 2 :
+		get_parent().tranziçao(self, "Interagindo")
 	
 	
 func physics_process(delta: float) -> void:
