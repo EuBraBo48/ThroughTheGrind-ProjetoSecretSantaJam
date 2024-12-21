@@ -1,0 +1,109 @@
+[gd_scene load_steps=14 format=3 uid="uid://bqg55efei4dv7"]
+
+[ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/cliente/Cliente.gd" id="1_u7k87"]
+[ext_resource type="Texture2D" uid="uid://d2j6yq2rhn14c" path="res://EuBraBo/Sprites/Personages/npcs/BonecoTemplate_9.png" id="2_a6og5"]
+[ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/state_machine.gd" id="3_jo3gm"]
+[ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/cliente/ide.gd" id="4_bbkig"]
+[ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/cliente/persiguindo.gd" id="5_hw4et"]
+[ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/cliente/interagindo.gd" id="6_fqwsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_infkv"]
+size = Vector2(10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vmyr"]
+atlas = ExtResource("2_a6og5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0ris"]
+atlas = ExtResource("2_a6og5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teork"]
+atlas = ExtResource("2_a6og5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwi12"]
+atlas = ExtResource("2_a6og5")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wockx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vmyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0ris")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teork")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwi12")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikrbh"]
+size = Vector2(14, 14)
+
+[node name="cliente2" type="CharacterBody2D" node_paths=PackedStringArray("_stateManine") groups=["Clientes"]]
+z_index = 2
+y_sort_enabled = true
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_u7k87")
+_stateManine = NodePath("StateMachine")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_infkv")
+
+[node name="Animate" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wockx")
+autoplay = "default"
+
+[node name="Navigation" type="NavigationAgent2D" parent="."]
+path_desired_distance = 2.0
+target_desired_distance = 2.0
+path_max_distance = 50.0
+path_postprocessing = 1
+avoidance_layers = 7
+avoidance_mask = 7
+debug_enabled = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("stateInicial")]
+script = ExtResource("3_jo3gm")
+stateInicial = NodePath("persiguindo")
+
+[node name="Ide" type="Node" parent="StateMachine"]
+script = ExtResource("4_bbkig")
+
+[node name="persiguindo" type="Node" parent="StateMachine" node_paths=PackedStringArray("_cliente")]
+script = ExtResource("5_hw4et")
+_cliente = NodePath("../..")
+
+[node name="Interagindo" type="Node" parent="StateMachine" node_paths=PackedStringArray("_cliente")]
+script = ExtResource("6_fqwsy")
+_cliente = NodePath("../..")
+
+[node name="TimerNavigation" type="Timer" parent="."]
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ikrbh")
+
+[node name="TimeAteendimento" type="Timer" parent="."]
+wait_time = 20.0
+
+[connection signal="timeout" from="TimerNavigation" to="." method="_on_timer_navigation_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="TimeAteendimento" to="StateMachine/Interagindo" method="_on_time_ateendimento_timeout"]

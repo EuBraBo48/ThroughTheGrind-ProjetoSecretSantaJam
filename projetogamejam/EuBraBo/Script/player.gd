@@ -57,18 +57,23 @@ func monventPlaye() -> void:
 	
 
 func _on_area_2d_body_entered(body) -> void:
-	if body.is_in_group("objetes"):
-		obejte = body 
-		v = true
-		
 	if body.is_in_group("Clientes"):
 		cliente_ = body
 		
 
 
 func _on_area_2d_body_exited(body) -> void:
+	if body.is_in_group("Clientes"):
+		cliente_ = null
+
+
+func _on_are_geralw_body_entered(body) -> void:
+	if body.is_in_group("objetes"):
+		obejte = body
+		v = true
+
+
+func _on_are_geralw_body_exited(body) -> void:
 	if body.is_in_group("objetes"):
 		obejte = null
 		v = false
-	if body.is_in_group("Clientes"):
-		cliente_ = null

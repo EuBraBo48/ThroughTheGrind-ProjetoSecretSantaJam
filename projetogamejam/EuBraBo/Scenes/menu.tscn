@@ -55,7 +55,6 @@ grow_vertical = 2
 color = Color(0.32549, 0.32549, 0.32549, 0.376471)
 
 [node name="menu" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -233,6 +232,7 @@ text = "Back"
 icon = ExtResource("3_bwf5g")
 
 [node name="creditos" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ctcyj1rwfgy5n"]
+[gd_scene load_steps=20 format=4 uid="uid://ctcyj1rwfgy5n"]
 
 [ext_resource type="PackedScene" uid="uid://c317f3ntxgy1f" path="res://EuBraBo/Scenes/player.tscn" id="1_7l5i3"]
 [ext_resource type="Script" path="res://EuBraBo/Script/dialogosDoChefDaMaeDoProta.gd" id="2_esjmb"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ce6gutyloxqkw" path="res://EuBraBo/Scenes/Nps/cliente.tscn" id="12_0f68h"]
 [ext_resource type="Script" path="res://EuBraBo/Script/geradorDeCliente.gd" id="13_qgisl"]
 [ext_resource type="PackedScene" uid="uid://dllar88mbeg6w" path="res://EuBraBo/Scenes/menu.tscn" id="14_n1awq"]
+[ext_resource type="AudioStream" uid="uid://cyvrgav85srte" path="res://EuBraBo/Sprites/sugar.wav" id="15_b2upw"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_adier"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -231,5 +232,9 @@ position = Vector2(2, -1)
 
 [node name="Menu" parent="CanvasLayer" instance=ExtResource("14_n1awq")]
 visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_b2upw")
+autoplay = true
 
 [connection signal="timeout" from="gerador/TimeClinte" to="gerador" method="_on_time_clinte_timeout"]

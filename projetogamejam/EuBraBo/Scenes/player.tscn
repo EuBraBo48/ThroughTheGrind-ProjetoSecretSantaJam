@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c317f3ntxgy1f"]
+[gd_scene load_steps=14 format=3 uid="uid://c317f3ntxgy1f"]
 
 [ext_resource type="Script" path="res://EuBraBo/Script/player.gd" id="1_b45il"]
 [ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/state_machine.gd" id="2_d0kmy"]
@@ -91,7 +91,10 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w26cl"]
-radius = 21.2132
+radius = 35.0143
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2pfj"]
+size = Vector2(13, 16)
 
 [node name="player" type="CharacterBody2D" node_paths=PackedStringArray("_stateManine") groups=["player"]]
 collision_layer = 4
@@ -148,5 +151,14 @@ collision_mask = 10
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_w26cl")
 
+[node name="AreGeralw" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 10
+
+[node name="Collision" type="CollisionShape2D" parent="AreGeralw"]
+shape = SubResource("RectangleShape2D_b2pfj")
+
 [connection signal="body_entered" from="AreGeral" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AreGeral" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="AreGeralw" to="." method="_on_are_geralw_body_entered"]
+[connection signal="body_exited" from="AreGeralw" to="." method="_on_are_geralw_body_exited"]

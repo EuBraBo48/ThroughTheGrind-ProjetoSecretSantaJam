@@ -77,6 +77,8 @@ animations = [{
 size = Vector2(14, 14)
 
 [node name="cliente" type="CharacterBody2D" node_paths=PackedStringArray("_stateManine") groups=["Clientes"]]
+z_index = 2
+y_sort_enabled = true
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_o66em")

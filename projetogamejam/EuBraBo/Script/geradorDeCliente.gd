@@ -1,12 +1,15 @@
 extends Node2D
 class_name geradorDeCliente
 
-var levei := 2
+var levei := 4
 @onready var gerador: geradorDeCliente = $"."
 
 
 var listaClintes: Array = [
 	preload("res://EuBraBo/Scenes/Nps/cliente.tscn"),
+	preload("res://EuBraBo/Scenes/Nps/cliente_2.tscn"),
+	preload("res://EuBraBo/Scenes/Nps/cliente_3.tscn"),
+	preload("res://EuBraBo/Scenes/Nps/cliente_4.tscn"),
 ]
 
 func _ready() -> void:
