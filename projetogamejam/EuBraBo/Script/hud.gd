@@ -41,9 +41,7 @@ func troca_de_infor() -> void:
 	dinheiro.text = "R$" + str(global.dinheiro)
 	horario.text = str(global.horario) + ":" + "00"
 	
-	tarefa_1.text = "atenderClieintes"+"("+str(global.TafezasPendentesAtender) +"/"+ str(global.TafezasFeitasAtender)+")"
-	tarefa_2.text = "Abastecer"+"("+str(global.TafezasPendentesEstoque) +"/"+ str(global.TafezasFeitasEstoque)+")"
-	tarefa_3.text = "Sujeiras"+"("+str(global.TafezasPendentesSegeiras) +"/"+ str(global.TafezasFeitasSugeiras)+")"
+	
 	
 	infor_caixa.text = "x"+str(NumCaixa)
 	

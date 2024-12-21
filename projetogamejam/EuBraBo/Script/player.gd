@@ -8,6 +8,9 @@ class_name Player
 
 var v := false
 var obejte
+var cliente_
+
+
 
 @export var seepd: float = 100
 
@@ -23,12 +26,19 @@ func _process(delta: float) -> void:
 		print("swswswsws")
 		if Input.is_action_just_pressed("interagir") and obejte.health < 100 and v == true  and _hud.NumCaixa >= 1:
 			obejte.health += 20
+			global.dinheiro += 2
 			_hud.NumCaixa -= 1
 			seepd += 5
-			global.TafezasFeitasEstoque += 1
+			
 	move_and_slide()
 	verify_direction()
 	monventPlaye()
+
+	if cliente_:
+		if Input.is_action_just_pressed("interagir") and cliente_.d == true:
+			cliente_.sla()
+			cliente_.d = false
+			
 
 
 func verify_direction() -> void:
@@ -50,9 +60,15 @@ func _on_area_2d_body_entered(body) -> void:
 	if body.is_in_group("objetes"):
 		obejte = body 
 		v = true
+		
+	if body.is_in_group("Clientes"):
+		cliente_ = body
+		
 
 
 func _on_area_2d_body_exited(body) -> void:
 	if body.is_in_group("objetes"):
 		obejte = null
 		v = false
+	if body.is_in_group("Clientes"):
+		cliente_ = null

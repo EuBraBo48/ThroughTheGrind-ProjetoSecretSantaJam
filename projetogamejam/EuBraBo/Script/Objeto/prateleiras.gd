@@ -15,6 +15,7 @@ func  _physics_process(delta: float) -> void:
 		$pratileiraCompleta.z_index = 0
 		$pratileiraMeia.z_index = 1
 		$pratileiraVasia.z_index = 0
+
 	if health == 100:
 		$pratileiraCompleta.z_index = 1
 		$pratileiraMeia.z_index = 0

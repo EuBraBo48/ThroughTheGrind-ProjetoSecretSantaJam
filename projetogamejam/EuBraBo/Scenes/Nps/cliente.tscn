@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ce6gutyloxqkw"]
+[gd_scene load_steps=18 format=3 uid="uid://ce6gutyloxqkw"]
 
 [ext_resource type="Texture2D" uid="uid://1lqcx68xgut6" path="res://EuBraBo/Sprites/Personages/npcs/BonecoTemplate_4.png" id="1_4np3o"]
 [ext_resource type="Script" path="res://EuBraBo/Script/StateMachine/cliente/Cliente.gd" id="1_o66em"]
@@ -73,7 +73,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="cliente" type="CharacterBody2D" node_paths=PackedStringArray("_stateManine")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikrbh"]
+size = Vector2(14, 14)
+
+[node name="cliente" type="CharacterBody2D" node_paths=PackedStringArray("_stateManine") groups=["Clientes"]]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_o66em")
@@ -90,8 +93,10 @@ autoplay = "ide"
 frame_progress = 0.967572
 
 [node name="Navigation" type="NavigationAgent2D" parent="."]
-path_desired_distance = 5.0
-target_desired_distance = 5.0
+path_desired_distance = 2.0
+target_desired_distance = 2.0
+path_max_distance = 50.0
+path_postprocessing = 1
 avoidance_layers = 7
 avoidance_mask = 7
 debug_enabled = true
@@ -114,4 +119,18 @@ _cliente = NodePath("../..")
 [node name="TimerNavigation" type="Timer" parent="."]
 autostart = true
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ikrbh")
+
+[node name="TimeAteendimento" type="Timer" parent="."]
+wait_time = 20.0
+
 [connection signal="timeout" from="TimerNavigation" to="." method="_on_timer_navigation_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="TimeAteendimento" to="StateMachine/Interagindo" method="_on_time_ateendimento_timeout"]

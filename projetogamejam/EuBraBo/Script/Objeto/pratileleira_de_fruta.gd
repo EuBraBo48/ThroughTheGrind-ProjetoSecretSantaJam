@@ -15,11 +15,12 @@ func _process(delta: float) -> void:
 		$pratileiraMeia.show()
 		$pratileiraVasia.hide()
 		$pratileiraCheia.hide()
-	elif health == 100:
+
+	if health == 100:
 		$pratileiraMeia.hide()
 		$pratileiraVasia.hide()
 		$pratileiraCheia.show()
-	elif  health <= 20:
+	if  health <= 20:
 		$pratileiraMeia.hide()
 		$pratileiraVasia.show()
 		$pratileiraCheia.hide()

@@ -6,7 +6,7 @@ class_name Manu
 @onready var creditos: Control = $creditos
 @onready var video: Control = $video
 
-
+		
 func _process(delta: float) -> void:
 	if visible == false:
 		pass
@@ -64,3 +64,8 @@ func _on_full_screen_toggled(toggled_on: bool) -> void:
 
 func _on_borderless_toggled(toggled_on: bool) -> void:
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, toggled_on)
+
+
+func _on_new_game_pressed() -> void:
+	show_and_hide(opcions,menu)
+	get_tree().change_scene_to_file("res://EuBraBo/Scenes/cassa_do_player.tscn")

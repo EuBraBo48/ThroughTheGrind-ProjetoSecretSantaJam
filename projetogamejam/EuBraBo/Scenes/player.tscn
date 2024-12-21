@@ -90,8 +90,8 @@ _data = {
 "Run": SubResource("Animation_atxt8")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_87qyj"]
-size = Vector2(14, 14)
+[sub_resource type="CircleShape2D" id="CircleShape2D_w26cl"]
+radius = 21.2132
 
 [node name="player" type="CharacterBody2D" node_paths=PackedStringArray("_stateManine") groups=["player"]]
 collision_layer = 4
@@ -146,7 +146,7 @@ collision_mask = 10
 
 [node name="Collision" type="CollisionShape2D" parent="AreGeral"]
 position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_87qyj")
+shape = SubResource("CircleShape2D_w26cl")
 
 [connection signal="body_entered" from="AreGeral" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="AreGeral" to="." method="_on_area_2d_body_exited"]

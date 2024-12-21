@@ -318,6 +318,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	dialogLigacaoMae()
 	dialogLigacaoChef()
+	
 
 
 func dialogDiarioAbri() -> void:
@@ -433,12 +434,8 @@ func dialogLigacaoMae() -> void:
 
 func dialogLigacaoChef() -> void:
 	if global.DiaGlogo == 1 and global.horario == 20:
-		print("dia1")
-		var dialog: DialogScren = DIALOG_SCREEEN.instantiate()
-		dialog.data = DialogChefeDia1
-		get_tree().paused = true
-		hud.add_child(dialog)
 		global.horario += 1
+		get_tree().change_scene_to_file("res://EuBraBo/Scenes/tabela_de_resutados.tscn")
 		
 	elif global.DiaGlogo == 2  and global.horario == 20:
 		print("dia 2")

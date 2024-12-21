@@ -1,8 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dllar88mbeg6w"]
+[gd_scene load_steps=21 format=3 uid="uid://dllar88mbeg6w"]
 
 [ext_resource type="Script" path="res://EuBraBo/Script/menu.gd" id="1_xc25y"]
 [ext_resource type="FontFile" uid="uid://chhvbl048066d" path="res://EuBraBo/Sprites/fontes/Cave-Story.ttf" id="2_viwet"]
 [ext_resource type="Texture2D" uid="uid://csfbmfv2fdxvn" path="res://EuBraBo/Sprites/icones/iconeDoProta.png" id="3_bwf5g"]
+[ext_resource type="Texture2D" uid="uid://c0pl35wsf8ygi" path="res://EuBraBo/Sprites/Objetos/tabelaDoDia.png" id="4_wdv34"]
+[ext_resource type="FontFile" uid="uid://baogvfjry2yc0" path="res://EuBraBo/Sprites/fontes/EquipmentPro.otf" id="5_tnlkl"]
+[ext_resource type="FontFile" uid="uid://byeucmyge7xj7" path="res://EuBraBo/Sprites/fontes/MatchupPro.otf" id="6_hk61s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_on1p5"]
 
@@ -49,9 +52,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.324203, 0.324203, 0.324203, 1)
+color = Color(0.32549, 0.32549, 0.32549, 0.376471)
 
 [node name="menu" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -72,15 +76,6 @@ theme_override_fonts/font = ExtResource("2_viwet")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_on1p5")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xwqj2")
 text = "new game"
-icon = ExtResource("3_bwf5g")
-
-[node name="continued" type="Button" parent="menu"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0.678431, 1, 1)
-theme_override_fonts/font = ExtResource("2_viwet")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_on1p5")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xwqj2")
-text = "continued"
 icon = ExtResource("3_bwf5g")
 
 [node name="opctions" type="Button" parent="menu"]
@@ -238,13 +233,17 @@ text = "Back"
 icon = ExtResource("3_bwf5g")
 
 [node name="creditos" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TabelaDoDia" type="Sprite2D" parent="creditos"]
+position = Vector2(183, 79)
+scale = Vector2(4.14063, 4.02632)
+texture = ExtResource("4_wdv34")
 
 [node name="BackFromCreditos" type="Button" parent="creditos"]
 layout_mode = 1
@@ -265,6 +264,54 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_a2hcb")
 text = "Back"
 icon = ExtResource("3_bwf5g")
 
+[node name="Label" type="Label" parent="creditos"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 29.0
+offset_right = 256.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("5_tnlkl")
+text = "Progamdor: EuBrabo48
+artist: Geloze"
+
+[node name="Label3" type="Label" parent="creditos"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 7.0
+offset_right = 309.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_tnlkl")
+text = "Crédito
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="creditos"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 63.0
+offset_right = 279.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("6_hk61s")
+theme_override_font_sizes/font_size = 10
+text = "Sorry for not doing all the game,
+ but I didn’t have much time,
+ you know, school is a pain with
+ exams and all. So I did what I could,
+ hope you like it. 
+Talk to me on Discord “EuBrabo48”."
+
+[node name="LinkButton" type="LinkButton" parent="creditos"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 135.0
+offset_right = 309.0
+offset_bottom = 175.0
+theme_override_fonts/font = ExtResource("6_hk61s")
+text = "GitHub"
+uri = "https://github.com/EuBraBo48"
+
+[connection signal="pressed" from="menu/new game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="menu/opctions" to="." method="_on_opctions_pressed"]
 [connection signal="pressed" from="menu/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="opcions/opcions/video" to="." method="_on_video_pressed"]

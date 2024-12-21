@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx845cwsdxqb0"]
+[gd_scene load_steps=7 format=3 uid="uid://bx845cwsdxqb0"]
 
 [ext_resource type="Script" path="res://EuBraBo/Script/hud.gd" id="1_202sp"]
 [ext_resource type="Texture2D" uid="uid://wymfufqvne1d" path="res://EuBraBo/Sprites/Objetos/horarioDia.png" id="1_pbtkn"]
 [ext_resource type="Texture2D" uid="uid://ig7l5ur7rd26" path="res://EuBraBo/Sprites/Objetos/retanguloDeInfomaçãos.png" id="2_vtoou"]
 [ext_resource type="FontFile" uid="uid://byeucmyge7xj7" path="res://EuBraBo/Sprites/fontes/MatchupPro.otf" id="4_a4m43"]
-[ext_resource type="Texture2D" uid="uid://copmq75r4comk" path="res://CoisaEmGeral/Expolho.png" id="5_71xtn"]
 [ext_resource type="Texture2D" uid="uid://jscchdov8mqc" path="res://EuBraBo/Sprites/icones/Caixita_basica.png" id="6_0v0sg"]
 [ext_resource type="Texture2D" uid="uid://bytcm2j417u3h" path="res://EuBraBo/Sprites/icones/NokiaTijolaoIcone.png" id="7_pjb0w"]
 
-[node name="Hud" type="Control" node_paths=PackedStringArray("texture_button", "dinheiro", "dia", "horario", "tarefa_1", "tarefa_2", "tarefa_3", "infor_caixa")]
+[node name="Hud" type="Control" node_paths=PackedStringArray("dinheiro", "dia", "horario", "infor_caixa")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,13 +15,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_202sp")
-texture_button = NodePath("hud/Task/VBoxContainer")
 dinheiro = NodePath("hud/HorarioDiaDieniro/RetanguloDeInfomaçãos/dinheiro")
 dia = NodePath("hud/HorarioDiaDieniro/HorarioDia/dia")
 horario = NodePath("hud/HorarioDiaDieniro/HorarioDia/horario")
-tarefa_1 = NodePath("hud/Task/VBoxContainer/tarefa1")
-tarefa_2 = NodePath("hud/Task/VBoxContainer/tarefa2")
-tarefa_3 = NodePath("hud/Task/VBoxContainer/tarefa3")
 infor_caixa = NodePath("hud/obejetos/InforCaixa")
 
 [node name="hud" type="CanvasLayer" parent="."]
@@ -80,62 +75,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="hud/HorarioDiaDieniro"]
+wait_time = 20.0
 autostart = true
-
-[node name="Task" type="Node" parent="hud"]
-
-[node name="RetanguloDeInfomaçãos" type="Sprite2D" parent="hud/Task"]
-position = Vector2(64, 11)
-scale = Vector2(2.68966, 2)
-texture = ExtResource("2_vtoou")
-
-[node name="task" type="Label" parent="hud/Task"]
-offset_left = 40.0
-offset_top = 2.0
-offset_right = 95.0
-offset_bottom = 19.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.488616, 7.70092e-07, 1)
-theme_override_fonts/font = ExtResource("4_a4m43")
-text = "tarefas"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="hud/Task"]
-anchors_preset = -1
-anchor_top = 3.29
-anchor_bottom = 3.29
-offset_left = 18.0
-offset_top = -569.2
-offset_right = 143.0
-offset_bottom = -505.2
-
-[node name="tarefa1" type="Label" parent="hud/Task/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.996078, 0, 0.956863)
-theme_override_colors/font_shadow_color = Color(0.879733, 0.459093, 0, 1)
-theme_override_fonts/font = ExtResource("4_a4m43")
-text = "atenderClieintes(0/0)"
-
-[node name="tarefa2" type="Label" parent="hud/Task/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.996078, 0, 0.956863)
-theme_override_colors/font_shadow_color = Color(0.879733, 0.459093, 0, 1)
-theme_override_fonts/font = ExtResource("4_a4m43")
-text = "Abastecer(0/0)"
-
-[node name="tarefa3" type="Label" parent="hud/Task/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.996078, 0, 0.956863)
-theme_override_colors/font_shadow_color = Color(0.879733, 0.459093, 0, 1)
-theme_override_fonts/font = ExtResource("4_a4m43")
-text = "Sujeiras(0/0)"
-
-[node name="TextureButton" type="TextureButton" parent="hud/Task"]
-offset_left = -16.0
-offset_top = -8.0
-offset_right = 43.0
-offset_bottom = 36.0
-texture_normal = ExtResource("5_71xtn")
-stretch_mode = 0
 
 [node name="obejetos" type="Node" parent="hud"]
 
@@ -157,4 +98,3 @@ position = Vector2(330, 154)
 texture = ExtResource("7_pjb0w")
 
 [connection signal="timeout" from="hud/HorarioDiaDieniro/Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="hud/Task/TextureButton" to="." method="_on_texture_button_pressed"]

@@ -26,10 +26,12 @@ func _process(delta: float) -> void:
 		if _id == data.size():
 			queue_free()
 			get_tree().paused = false
+			if global.horario == 21:
+					get_tree().change_scene_to_file("res://EuBraBo/Scenes/tabela_de_resutados.tscn")
 			return	
 		_initialice_dialog()	
 
-
+	
 func _initialice_dialog() -> void:
 	if data.has(_id):
 		_name.text = data[_id]["title"]
