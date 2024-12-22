@@ -9,7 +9,7 @@ var lsitaDedano: Array = [
 
 
 func enter() -> void:
-	if owner.obejte.health and  owner.obejte.health > 0:
+	if owner.obejte != null and owner.obejte.health > 0:
 		var danoAleatorio = lsitaDedano.pick_random()
 		print(danoAleatorio)
 		owner.obejte.health -= danoAleatorio

@@ -7,9 +7,7 @@ var levei := 4
 
 var listaClintes: Array = [
 	preload("res://EuBraBo/Scenes/Nps/cliente.tscn"),
-	preload("res://EuBraBo/Scenes/Nps/cliente_2.tscn"),
-	preload("res://EuBraBo/Scenes/Nps/cliente_3.tscn"),
-	preload("res://EuBraBo/Scenes/Nps/cliente_4.tscn"),
+
 ]
 
 func _ready() -> void:
@@ -19,6 +17,7 @@ func ClientesNovos() -> void:
 	levei += 0.6
 	for i in range(int(abs(levei))):	
 		var escolhe_Cliente = listaClintes[randi() % listaClintes.size()].instantiate()
+		#escolhe_Cliente.listaDeAnimaca.pick
 		add_child(escolhe_Cliente)
 
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dllar88mbeg6w"]
+[gd_scene load_steps=22 format=3 uid="uid://dllar88mbeg6w"]
 
 [ext_resource type="Script" path="res://EuBraBo/Script/menu.gd" id="1_xc25y"]
+[ext_resource type="Texture2D" uid="uid://b1ufrdxwgn5re" path="res://CoisaEmGeral/icone.png" id="2_nkl67"]
 [ext_resource type="FontFile" uid="uid://chhvbl048066d" path="res://EuBraBo/Sprites/fontes/Cave-Story.ttf" id="2_viwet"]
 [ext_resource type="Texture2D" uid="uid://csfbmfv2fdxvn" path="res://EuBraBo/Sprites/icones/iconeDoProta.png" id="3_bwf5g"]
 [ext_resource type="Texture2D" uid="uid://c0pl35wsf8ygi" path="res://EuBraBo/Sprites/Objetos/tabelaDoDia.png" id="4_wdv34"]
@@ -67,6 +68,11 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Icone" type="Sprite2D" parent="menu"]
+position = Vector2(39, 35.5)
+scale = Vector2(1.41016, 0.730469)
+texture = ExtResource("2_nkl67")
 
 [node name="new game" type="Button" parent="menu"]
 layout_mode = 2

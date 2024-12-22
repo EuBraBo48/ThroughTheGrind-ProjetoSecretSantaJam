@@ -12,8 +12,16 @@ var v = false
 
 var d := false
 
+var listaDeAnimaca: Array = [
+	"new_animation",
+	"new_animation_1",
+	"run",
+	"new_animation_2",
+]
 
 func _ready() -> void:
+	var anim = listaDeAnimaca.pick_random()
+	animate.play(anim)
 	_stateManine.stateMacne(self)
 
 
@@ -21,8 +29,9 @@ func _process(delta: float) -> void:
 	diretonVericty()
 	#alvor = Vector2(207,122)
 	#alvor = owner.get_global_mouse_position()
+	
 	var diton = to_local(navigation.get_next_path_position()).normalized()
-	velocity = diton * 50
+	navigation.set_velocity(diton * 50)
 	move_and_slide()
 
 
@@ -59,4 +68,9 @@ func sla():
 	await get_tree().create_timer(3).timeout
 	d = false
 	queue_free()
+	
+
+
+func _on_navigation_velocity_computed(safe_velocity: Vector2) -> void:
+	velocity = safe_velocity
 	
