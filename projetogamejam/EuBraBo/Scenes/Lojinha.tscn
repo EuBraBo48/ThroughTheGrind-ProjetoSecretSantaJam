@@ -234,8 +234,9 @@ position = Vector2(2, -1)
 visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
+position = Vector2(4, 1)
 stream = ExtResource("15_b2upw")
 autoplay = true
-stream_paused = true
 
 [connection signal="timeout" from="gerador/TimeClinte" to="gerador" method="_on_time_clinte_timeout"]
