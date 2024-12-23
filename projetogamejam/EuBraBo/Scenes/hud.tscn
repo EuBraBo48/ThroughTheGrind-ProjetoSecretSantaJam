@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx845cwsdxqb0"]
+
+[ext_resource type="Script" path="res://EuBraBo/Script/hud.gd" id="1_202sp"]
+[ext_resource type="Texture2D" uid="uid://wymfufqvne1d" path="res://EuBraBo/Sprites/Objetos/horarioDia.png" id="1_pbtkn"]
+[ext_resource type="Texture2D" uid="uid://ig7l5ur7rd26" path="res://EuBraBo/Sprites/Objetos/retanguloDeInfomaçãos.png" id="2_vtoou"]
+[ext_resource type="FontFile" uid="uid://byeucmyge7xj7" path="res://EuBraBo/Sprites/fontes/MatchupPro.otf" id="4_a4m43"]
+[ext_resource type="Texture2D" uid="uid://jscchdov8mqc" path="res://EuBraBo/Sprites/icones/Caixita_basica.png" id="6_0v0sg"]
+[ext_resource type="Texture2D" uid="uid://bytcm2j417u3h" path="res://EuBraBo/Sprites/icones/NokiaTijolaoIcone.png" id="7_pjb0w"]
+
+[node name="Hud" type="Control" node_paths=PackedStringArray("dinheiro", "dia", "horario", "infor_caixa")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_202sp")
+dinheiro = NodePath("hud/HorarioDiaDieniro/RetanguloDeInfomaçãos/dinheiro")
+dia = NodePath("hud/HorarioDiaDieniro/HorarioDia/dia")
+horario = NodePath("hud/HorarioDiaDieniro/HorarioDia/horario")
+infor_caixa = NodePath("hud/obejetos/InforCaixa")
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="HorarioDiaDieniro" type="Node" parent="hud"]
+
+[node name="RetanguloDeInfomaçãos" type="Sprite2D" parent="hud/HorarioDiaDieniro"]
+position = Vector2(309.5, 45.333)
+scale = Vector2(2.86207, 2.38883)
+texture = ExtResource("2_vtoou")
+
+[node name="dinheiro" type="Label" parent="hud/HorarioDiaDieniro/RetanguloDeInfomaçãos"]
+anchors_preset = -1
+anchor_left = 0.897
+anchor_top = 0.356
+anchor_right = 0.897
+anchor_bottom = 0.356
+offset_left = -37.7178
+offset_top = -9.85339
+offset_right = 16.2822
+offset_bottom = 2.14661
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.188235, 0, 1)
+theme_override_fonts/font = ExtResource("4_a4m43")
+theme_override_font_sizes/font_size = 11
+text = "R$000"
+
+[node name="HorarioDia" type="Sprite2D" parent="hud/HorarioDiaDieniro"]
+position = Vector2(311, 14)
+scale = Vector2(2, 2)
+texture = ExtResource("1_pbtkn")
+
+[node name="dia" type="Label" parent="hud/HorarioDiaDieniro/HorarioDia"]
+offset_left = -21.5
+offset_top = -9.5
+offset_right = -6.5
+offset_bottom = 3.5
+theme_override_colors/font_color = Color(0, 0.929412, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.443137, 1)
+theme_override_fonts/font = ExtResource("4_a4m43")
+text = "2"
+horizontal_alignment = 1
+
+[node name="horario" type="Label" parent="hud/HorarioDiaDieniro/HorarioDia"]
+offset_left = -2.0
+offset_top = -8.5
+offset_right = 25.0
+offset_bottom = 4.5
+theme_override_colors/font_color = Color(0, 0.929412, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.596078, 1)
+theme_override_fonts/font = ExtResource("4_a4m43")
+theme_override_font_sizes/font_size = 12
+text = "16:40"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="hud/HorarioDiaDieniro"]
+wait_time = 20.0
+autostart = true
+
+[node name="obejetos" type="Node" parent="hud"]
+
+[node name="CaixitaBasica" type="Sprite2D" parent="hud/obejetos"]
+position = Vector2(330, 170)
+scale = Vector2(0.75, 0.6875)
+texture = ExtResource("6_0v0sg")
+
+[node name="InforCaixa" type="Label" parent="hud/obejetos"]
+offset_left = 337.0
+offset_top = 163.0
+offset_right = 350.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("4_a4m43")
+text = "x0"
+
+[node name="NokiaTijolaoIcone" type="Sprite2D" parent="hud/obejetos"]
+position = Vector2(330, 154)
+texture = ExtResource("7_pjb0w")
+
+[connection signal="timeout" from="hud/HorarioDiaDieniro/Timer" to="." method="_on_timer_timeout"]

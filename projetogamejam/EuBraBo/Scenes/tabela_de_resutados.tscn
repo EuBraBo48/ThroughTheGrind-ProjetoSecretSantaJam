@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dohlrpdmljj46"]
+
+[ext_resource type="Texture2D" uid="uid://c0pl35wsf8ygi" path="res://EuBraBo/Sprites/Objetos/tabelaDoDia.png" id="1_6vx8v"]
+[ext_resource type="Script" path="res://EuBraBo/Script/tabela_de_resutados.gd" id="1_hs7e8"]
+[ext_resource type="FontFile" uid="uid://bycgg1f11to1c" path="res://EuBraBo/Sprites/taleMaps/Minecraft.ttf" id="2_vl70k"]
+[ext_resource type="FontFile" uid="uid://byeucmyge7xj7" path="res://EuBraBo/Sprites/fontes/MatchupPro.otf" id="3_os068"]
+
+[node name="tabelaDeResutados" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hs7e8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.105882, 0.235294, 1)
+
+[node name="TabelaDoDia" type="Sprite2D" parent="."]
+position = Vector2(180, 91)
+scale = Vector2(4, 4)
+texture = ExtResource("1_6vx8v")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 129.0
+offset_top = 125.0
+offset_right = 207.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("2_vl70k")
+text = "Next day"
+
+[node name="infor" type="Label" parent="."]
+layout_mode = 2
+offset_left = 53.0
+offset_top = 39.0
+offset_right = 197.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("3_os068")
+text = "Total amount of the day"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

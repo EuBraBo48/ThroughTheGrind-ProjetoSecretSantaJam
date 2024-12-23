@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv02tbw06nhld"]
+
+[ext_resource type="Texture2D" uid="uid://bekbvaeey7tlt" path="res://EuBraBo/Sprites/taleMaps/TilemapDaLoja_2.png" id="1_h5080"]
+[ext_resource type="Script" path="res://EuBraBo/Script/Objeto/prateleiras_de_estoque.gd" id="1_lh1qf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80qjp"]
+size = Vector2(32, 32)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wcdru"]
+radius = 25.0
+height = 52.0
+
+[node name="Prateleiras" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 6
+gravity_scale = 0.0
+script = ExtResource("1_lh1qf")
+
+[node name="colcao" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_80qjp")
+
+[node name="pratileiraCompleta" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, 5)
+texture = ExtResource("1_h5080")
+region_enabled = true
+region_rect = Rect2(48, 80, 32, 40)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_wcdru")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

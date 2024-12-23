@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://fy01cqfrw4fa"]
+
+[ext_resource type="Script" path="res://EuBraBo/Script/dialog_principal.gd" id="1_k2aoy"]
+[ext_resource type="PackedScene" uid="uid://c317f3ntxgy1f" path="res://EuBraBo/Scenes/player.tscn" id="2_0b2hm"]
+
+[node name="CassaDoPlayer" type="Node2D"]
+
+[node name="DialogPrincipal" type="CanvasLayer" parent="." node_paths=PackedStringArray("hud")]
+script = ExtResource("1_k2aoy")
+hud = NodePath(".")
+
+[node name="player" parent="." instance=ExtResource("2_0b2hm")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(135, 86)
